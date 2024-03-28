@@ -10,6 +10,10 @@ public sealed class Location : ValueObject
     public float Latitude { get; }
     public float Longitude { get; }
 
+#pragma warning disable CS8618
+    private Location() { }
+#pragma warning restore CS8618
+
     private Location(string name, string address, float latitude, float longitude)
     {
         Name = name;

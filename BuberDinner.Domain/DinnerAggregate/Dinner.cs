@@ -29,6 +29,10 @@ public sealed class Dinner : AggregateRoot<DinnerId, Guid>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private Dinner() { }
+#pragma warning restore CS8618
+
     private Dinner(
         DinnerId DinnerId,
         string name,

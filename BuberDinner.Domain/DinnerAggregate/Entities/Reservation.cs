@@ -18,6 +18,10 @@ public sealed class Reservation : Entity<ReservationId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private Reservation() { }
+#pragma warning restore CS8618
+
     private Reservation(
         ReservationId reservationId,
         int guestCount,
