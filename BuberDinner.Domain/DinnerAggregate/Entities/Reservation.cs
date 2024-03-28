@@ -5,7 +5,7 @@ using BuberDinner.Domain.GuestAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.DinnerAggregate.Entities;
 
-public sealed class Rating : Entity<ReservationId>
+public sealed class Reservation : Entity<ReservationId>
 {
     public enum Status { PendingGuestConfirmation, Reserved, Cancelled };
 
@@ -18,7 +18,7 @@ public sealed class Rating : Entity<ReservationId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
-    private Rating(
+    private Reservation(
         ReservationId reservationId,
         int guestCount,
         string description,
@@ -39,7 +39,7 @@ public sealed class Rating : Entity<ReservationId>
         UpdatedDateTime = updatedDateTime;
     }
 
-    public static Rating Create(
+    public static Reservation Create(
         int guestCount,
         string description,
         Status reservationStatus,

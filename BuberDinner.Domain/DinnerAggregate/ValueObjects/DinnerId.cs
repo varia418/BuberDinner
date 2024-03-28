@@ -17,4 +17,9 @@ public sealed class DinnerId : AggregateRootId<Guid>
     {
         yield return Value;
     }
+
+    public static DinnerId Create(Guid dinnerId)
+    {
+        return new(dinnerId);
+    }
 }

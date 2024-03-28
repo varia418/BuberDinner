@@ -9,7 +9,7 @@ namespace BuberDinner.Domain.DinnerAggregate;
 public sealed class Dinner : AggregateRoot<DinnerId, Guid>
 {
     public enum DinnerStatus { Upcoming, InProgress, Ended, Cancelled };
-    private readonly List<Rating> _reservations = new();
+    private readonly List<Reservation> _reservations = new();
 
     public string Name { get; }
     public string Description { get; }
@@ -25,7 +25,7 @@ public sealed class Dinner : AggregateRoot<DinnerId, Guid>
     public MenuId MenuId { get; }
     public string ImageUrl { get; }
     public Location Location { get; }
-    public IReadOnlyList<Rating> Reservations => _reservations.AsReadOnly();
+    public IReadOnlyList<Reservation> Reservations => _reservations.AsReadOnly();
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
