@@ -6,7 +6,7 @@ using BuberDinner.Domain.DinnerAggregate.Entities;
 
 namespace BuberDinner.Domain.DinnerAggregate;
 
-public sealed class Dinner : AggregateRoot<DinnerId, Guid>
+public sealed class Dinner : AggregateRoot<DinnerId>
 {
     public enum DinnerStatus { Upcoming, InProgress, Ended, Cancelled };
     private readonly List<Reservation> _reservations = new();

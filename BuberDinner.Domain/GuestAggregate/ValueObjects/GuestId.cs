@@ -3,17 +3,25 @@ using BuberDinner.Domain.Common.Models;
 
 namespace BuberDinner.Domain.GuestAggregate.ValueObjects;
 
-public sealed class GuestId : AggregateRootId<Guid>
+public sealed class GuestId : ValueObject
 {
-    public override Guid Value { get; protected set; }
+    public Guid Value { get; }
+
     private GuestId(Guid value)
     {
         Value = value;
     }
+
     public static GuestId CreateUnique()
     {
         return new(Guid.NewGuid());
     }
+
+    public static GuestId Create(Guid guestId)
+    {
+        return new(guestId);
+    }
+
     public override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
