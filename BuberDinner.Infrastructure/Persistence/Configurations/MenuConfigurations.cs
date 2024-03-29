@@ -1,10 +1,8 @@
-using BuberDinner.Domain.DinnerAggregate;
 using BuberDinner.Domain.DinnerAggregate.ValueObjects;
 using BuberDinner.Domain.HostAggregate.ValueObjects;
 using BuberDinner.Domain.MenuAggregate;
 using BuberDinner.Domain.MenuAggregate.Entities;
 using BuberDinner.Domain.MenuAggregate.ValueObjects;
-using BuberDinner.Domain.MenuReviewAggregate;
 using BuberDinner.Domain.MenuReviewAggregate.ValueObjects;
 
 using Microsoft.EntityFrameworkCore;
@@ -112,7 +110,7 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
 
             dib.WithOwner().HasForeignKey(nameof(MenuId));
 
-            dib.HasKey(nameof(Dinner.Id));
+            dib.HasKey("Id");
 
             dib.Property(d => d.Value)
                 .HasColumnName(nameof(DinnerId))
@@ -131,7 +129,7 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
 
             mrib.WithOwner().HasForeignKey(nameof(MenuId));
 
-            mrib.HasKey(nameof(MenuReview.Id));
+            mrib.HasKey("Id");
 
             mrib.Property(d => d.Value)
                 .HasColumnName(nameof(MenuReviewId))
