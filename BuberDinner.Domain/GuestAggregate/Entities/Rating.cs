@@ -13,6 +13,10 @@ public sealed class GuestRating : Entity<RatingId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private GuestRating() { }
+#pragma warning restore CS8618
+
     private GuestRating(
         RatingId ratingId,
         HostId hostId,

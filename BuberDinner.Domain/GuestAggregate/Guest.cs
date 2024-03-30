@@ -28,6 +28,10 @@ public sealed class Guest : AggregateRoot<GuestId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private Guest() { }
+#pragma warning restore CS8618
+
     private Guest(
         GuestId guestId,
         string firstName,

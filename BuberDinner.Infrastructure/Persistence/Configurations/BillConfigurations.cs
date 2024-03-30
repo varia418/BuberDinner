@@ -20,33 +20,33 @@ public class BillConfigurations : IEntityTypeConfiguration<Bill>
     {
         builder.ToTable("Bills");
 
-        builder.HasKey(m => m.Id);
+        builder.HasKey(b => b.Id);
 
-        builder.Property(m => m.Id)
+        builder.Property(b => b.Id)
             .ValueGeneratedNever()
             .HasConversion(
                 id => id.Value,
                 value => BillId.Create(value)
             );
 
-        builder.Property(m => m.DinnerId)
+        builder.Property(b => b.DinnerId)
             .HasConversion(
                 id => id.Value,
                 value => DinnerId.Create(value)
             );
 
-        builder.Property(m => m.GuestId)
+        builder.Property(b => b.GuestId)
             .HasConversion(
                 id => id.Value,
                 value => GuestId.Create(value)
             );
 
-        builder.Property(m => m.HostId)
+        builder.Property(b => b.HostId)
             .HasConversion(
                 id => id.Value,
                 value => HostId.Create(value)
             );
 
-        builder.OwnsOne(m => m.Price);
+        builder.OwnsOne(b => b.Price);
     }
 }
