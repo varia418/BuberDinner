@@ -5,8 +5,8 @@ namespace BuberDinner.Domain.DinnerAggregate.ValueObjects;
 
 public sealed class DinnerPrice : ValueObject
 {
-    public int Amount { get; }
-    public string Currency { get; }
+    public int Amount { get; private set; }
+    public string Currency { get; private set; }
 
 #pragma warning disable CS8618
     private DinnerPrice() { }

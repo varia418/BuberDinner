@@ -5,8 +5,8 @@ namespace BuberDinner.Domain.BillAggregate.ValueObjects;
 
 public sealed class BillPrice : ValueObject
 {
-    public int Amount { get; }
-    public string Currency { get; }
+    public int Amount { get; private set; }
+    public string Currency { get; private set; }
 
     private BillPrice(int amount, string currency)
     {

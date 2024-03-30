@@ -4,8 +4,8 @@ namespace BuberDinner.Domain.MenuAggregate.ValueObjects;
 
 public sealed class MenuRating : ValueObject
 {
-    public float Value { get; }
-    public int NumRatings { get; }
+    public float Value { get; private set; }
+    public int NumRatings { get; private set; }
     private MenuRating(float value, int numRatings)
     {
         Value = value;
