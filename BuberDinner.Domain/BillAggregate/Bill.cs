@@ -15,6 +15,10 @@ public sealed class Bill : AggregateRoot<BillId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private Bill() { }
+#pragma warning restore CS8618
+
     private Bill(
         BillId billId,
         DinnerId dinnerId,
