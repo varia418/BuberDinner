@@ -12,6 +12,10 @@ public sealed class User : AggregateRoot<UserId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private User() { }
+#pragma warning restore CS8618
+
     private User(
         UserId userId,
         string firstName,
