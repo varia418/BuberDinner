@@ -80,7 +80,6 @@ public class MenuConfigurations : IEntityTypeConfiguration<Menu>
                 ib.HasKey(nameof(MenuItem.Id), "MenuSectionId", "MenuId");
 
                 ib.Property(i => i.Id)
-                    .HasColumnName("MenuItemId")
                     .ValueGeneratedNever()
                     .HasConversion(
                         id => id.Value,
