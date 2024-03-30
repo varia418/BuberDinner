@@ -18,6 +18,10 @@ public sealed class MenuReview : AggregateRoot<MenuReviewId>
     public DateTime CreatedDateTime { get; }
     public DateTime UpdatedDateTime { get; }
 
+#pragma warning disable CS8618
+    private MenuReview() { }
+#pragma warning restore CS8618
+
     private MenuReview(
         MenuReviewId menuReviewId,
         float rating,
