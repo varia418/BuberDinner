@@ -5,20 +5,25 @@ namespace BuberDinner.Application.UnitTests.Menus.Commands.TestUtils;
 
 public static class CreateMenuCommandUtils
 {
-    public static CreateMenuCommand CreateCommand() =>
+    public static CreateMenuCommand CreateCommand(
+        List<CreateMenuSectionCommand>? sections = null
+    ) =>
         new CreateMenuCommand(
             Constants.Host.Id.ToString()!,
             Constants.Menu.Name,
             Constants.Menu.Description,
-            CreateMenuSectionsCommand()
+            sections ?? CreateMenuSectionsCommand()
         );
 
-    public static List<CreateMenuSectionCommand> CreateMenuSectionsCommand(int sectionCount = 1) =>
+    public static List<CreateMenuSectionCommand> CreateMenuSectionsCommand(
+        int sectionCount = 1,
+        List<CreateMenuItemCommand>? items = null
+    ) =>
         Enumerable.Range(0, sectionCount)
             .Select(index => new CreateMenuSectionCommand(
                 Constants.Menu.SectionNameFromIndex(index),
                 Constants.Menu.SectionDescriptionFromIndex(index),
-                CreateMenuItemsCommand()
+                items ?? CreateMenuItemsCommand()
             )).ToList();
 
     public static List<CreateMenuItemCommand> CreateMenuItemsCommand(int itemCount = 1) =>
