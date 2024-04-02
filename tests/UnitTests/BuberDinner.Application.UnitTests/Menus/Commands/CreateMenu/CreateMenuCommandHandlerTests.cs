@@ -16,7 +16,7 @@ public class CreateMenuCommandHandlerTests
     public CreateMenuCommandHandlerTests()
     {
         _mockMenuRepository = new Mock<IMenuRepository>();
-        _handler = new CreateMenuCommandHandler(_mockMenuRepository);
+        _handler = new CreateMenuCommandHandler(_mockMenuRepository.Object);
     }
 
     [Theory]
